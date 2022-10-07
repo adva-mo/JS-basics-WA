@@ -7,8 +7,8 @@
 const numbers = [10, 343445353, 3453445, 3453545353453];
 
 function sum2lowest(arr) {
-  arr.sort(function compareNumbers(a, b) {
-    return a - b;
+  arr.sort((a, b) => {
+    a - b;
   });
   return arr[0] + arr[1];
 }
@@ -143,6 +143,8 @@ function nb_year(p0, percent, aug, p) {
 // Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
 // The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 
+//---------not completed
+
 // Ex4.1 - Fibonacci -
 // “Write a function to return an n element in Fibonacci sequence” is one of the most common questions you can hear during
 // the coding challenge interview part. In this blogpost I’m going to walk through the two of the most typical solutions for
@@ -163,3 +165,38 @@ function Fibonacci(n) {
   }
 }
 // console.log(Fibonacci(12));
+
+// Ex4.2 - Tribonacci -
+// Well met with Fibonacci bigger brother, AKA Tribonacci.
+// As the name may already reveal, it works basically like a Fibonacci, but summing the last
+// 3 (instead of 2) numbers of the sequence to generate the next.
+// So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA
+// signature), we have this sequence: [1, 1 ,1, 3, 5, 9, 17, 31, ...]
+// But what if we started with [0, 0, 1] as a signature? As starting with [0, 1] instead of [1, 1]
+// basically shifts the common Fibonacci sequence by once place, you may be tempted to think
+// that we would get the same sequence shifted by 2 places, but that is not the case and we would get:
+// [0, 0, 1, 1, 2, 4, 7, 13, 24, ...]
+// Well, you may have guessed it by now, but to be clear: you need to create a
+// fibonacci function that given a signature array/list, returns the first n elements - signature
+// included of the so seeded sequence.
+// Signature will always contain 3 numbers; n will always be a non-negative number;
+// if n == 0, then return an empty array (except in C return NULL) and be ready for anything else which is
+// not clearly specified ;)
+
+function Tribonacci(n, arr) {
+  if (n == 1 || n == 2) {
+    return [];
+  } else if (n == 3) {
+    return 1;
+  } else return [Fibonacci(n - 1), Fibonacci(n - 2), Fibonacci(n - 3)];
+}
+// console.log(Tribonacci(2));
+
+// Ex5.1 - trimming string
+// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string.
+// You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+function trimming(str) {
+  return str.substring(1, str.length - 1);
+}
+// console.log(trimming("vhjfgvhbkjh"));
