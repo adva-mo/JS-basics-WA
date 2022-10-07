@@ -131,3 +131,35 @@ function nb_year(p0, percent, aug, p) {
   return counter;
 }
 // console.log(nb_year(1500000, 2.5, 10000, 2000000));
+
+// Ex3.2 - People on the Bus
+
+// There is a bus moving in the city, and it takes and drop some people in each bus stop.
+// You are provided with a list (or array) of integer arrays (or tuples). Each integer array has two items which represent
+//  number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
+// Your task is to return number of people who are still in the bus after the last bus station (after the last array).
+// Even though it is the last bus stop, the bus is not empty and some people are still in the bus, and they are probably sleeping there :D
+// Take a look on the test cases.
+// Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
+// The second value in the first integer array is 0, since the bus is empty in the first bus stop.
+
+// Ex4.1 - Fibonacci -
+// “Write a function to return an n element in Fibonacci sequence” is one of the most common questions you can hear during
+// the coding challenge interview part. In this blogpost I’m going to walk through the two of the most typical solutions for
+// this problem and also cover a dreadful (for most of novice developers) topic of time complexity.
+// So what is a Fibonacci sequence? According to ​Wikipedia​:
+// “In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence,
+// and characterized by the fact that every number after the first two is the sum of the two preceding ones.”
+// Depending on the chosen starting point of the sequence (0 or 1) the sequence would look like this:
+// 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+// or this:
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+
+function Fibonacci(n) {
+  if (n == 1 || n == 2) {
+    return 1;
+  } else {
+    return Fibonacci(n - 1) + Fibonacci(n - 2);
+  }
+}
+// console.log(Fibonacci(12));
