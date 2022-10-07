@@ -200,3 +200,16 @@ function trimming(str) {
   return str.substring(1, str.length - 1);
 }
 // console.log(trimming("vhjfgvhbkjh"));
+
+// Ex5.2 - String Repeat
+// Write a function called repeat_str which repeats the given string src exactly count times. repeatStr(6, "I")  "IIIIII"
+// repeatStr(5, "Hello") "HelloHelloHelloHelloHello"
+
+function repeat_str(num, str) {
+  let res = "";
+  for (let i = 0; i < num; i++) {
+    res += str;
+  }
+  return res;
+}
+// console.log(repeat_str(5, "Hello"));
