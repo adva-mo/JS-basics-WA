@@ -12,8 +12,40 @@ function sum2lowest(arr) {
   });
   return arr[0] + arr[1];
 }
-console.log(sum2lowest(numbers));
+// console.log(sum2lowest(numbers));
 
 // Ex2.2 - One and Zero - Binary
 // Given an array of ones and zeroes, convert the equivalent binary value to an integer.
 // Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+function fromBinary(arr) {
+  let counter = 0;
+  for (num of arr) {
+    counter = 2 * counter + num;
+  }
+  return counter;
+}
+// console.log(fromBinary([1, 0, 1, 1]));
+
+// Ex2.3 - Find the Next Perfect Square
+// You might know some pretty large perfect squares. But what about the NEXT one?
+// Complete the findNextSquare method that finds the next integral perfect square after the one passed
+// as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an
+//integer. If the parameter is itself not a perfect square then -1 should be returned. You may assume
+//the parameter is positive.
+
+function findNextSquare(n) {
+  let firstSqar = Math.sqrt(n);
+  if (Number.isInteger(firstSqar)) {
+    return (firstSqar + 1) ** 2;
+  } else {
+    return -1;
+  }
+}
+// console.log(findNextSquare(114));
+
+// Ex2.4 - Unique
+// There is an array with some numbers. All numbers are equal except for one. Try to find it!
+// findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+// indUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+// It’s guaranteed that array contains at least 3 numbers.
