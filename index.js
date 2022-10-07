@@ -36,11 +36,7 @@ function fromBinary(arr) {
 
 function findNextSquare(n) {
   let firstSqar = Math.sqrt(n);
-  if (Number.isInteger(firstSqar)) {
-    return (firstSqar + 1) ** 2;
-  } else {
-    return -1;
-  }
+  return Number.isInteger(firstSqar) ? (firstSqar + 1) ** 2 : -1;
 }
 // console.log(findNextSquare(114));
 
@@ -49,3 +45,10 @@ function findNextSquare(n) {
 // findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
 // indUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
 // It’s guaranteed that array contains at least 3 numbers.
+
+function Unique(arr) {
+  let firstNum = arr.shift();
+  let nextMatch = arr.find((num) => num != firstNum);
+  return nextMatch ? nextMatch : firstNum;
+}
+// console.log(Unique([0, 0, 0.55, 0, 0]));
