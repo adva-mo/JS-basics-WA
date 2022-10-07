@@ -67,3 +67,47 @@ function Summation(n) {
   return sum;
 }
 // console.log(Summation(2));
+
+// Ex2.6 - Years and Centuries
+// The first century spans from the year 1 up to and including the year 100,
+// The second - from the year 101 up to and including the year 200, etc.
+// Task :
+// Given a year, return the century it is in.
+// Input , Output Examples ::
+// centuryFromYear(1705) returns (18)
+// centuryFromYear( 1900) returns (19)
+// centuryFromYear(1601) returns (17)
+// centuryFromYear(2000) returns (20)
+
+function century(year) {
+  if (year % 100 == 0) {
+    return year / 100;
+  } else {
+    year = year + "";
+    return Number(year[0] + year[1]) + 1;
+  }
+}
+// console.log(century(1900));
+
+// Ex2.7 - Basic Math
+// Your task is to create a function that does four basic .
+// The function should take three arguments - operation(string/char), value1(number), value2(number).
+// The function should return result of numbers after applying the chosen operation. Examples
+// bbasicOp('+', 4, 7)  Output: 11
+// basicOp('-', 15, 18)  Output: -3
+// basicOp('*', 5, 5)  Output: 25
+// basicOp('/', 49, 7)  Output: 7
+
+function basicMath(op, val1, val2) {
+  switch (op) {
+    case "+":
+      return val1 + val2;
+    case "-":
+      return val1 - val2;
+    case "*":
+      return val1 * val2;
+    case "/":
+      return val1 / val2;
+  }
+}
+// console.log(basicMath("-", 15, 18));
