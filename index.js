@@ -52,3 +52,18 @@ function Unique(arr) {
   return nextMatch ? nextMatch : firstNum;
 }
 // console.log(Unique([0, 0, 0.55, 0, 0]));
+
+// Ex2.5 - Summation
+// Write a program that finds the summation of every number from 1 to num. The number will always be
+// a positive integer greater than 0.
+// For example: summation(2) -> 3 1+2
+// summation(8) -> 36 1+2+3+4+5+6+7+8
+
+function Summation(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+// console.log(Summation(2));
