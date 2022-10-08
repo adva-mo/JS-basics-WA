@@ -262,7 +262,7 @@ function toWeirdCase(str) {
     })
     .join(" ");
 }
-// console.log(toWeirdCase("Weird string case"));
+// console.log(toWeirdCase("String"));
 
 // Ex5.5 - Abbreviate two words
 // Write a function to convert a name into initials. This kata strictly takes two words with one space in
@@ -280,4 +280,33 @@ function initial(name) {
   });
   return res.join(".");
 }
-console.log(initial("Sam Harris"));
+// console.log(initial("Sam Harris"));
+
+// Ex5.6 - Mask
+// Usually when you buy something, you're asked whether your credit card number, phone number or answer to
+// your most secret question is still correct. However, since someone could look over your shoulder,
+// you don't want that shown on your screen. Instead, we mask it.
+// Your task is to write a function maskify, which changes all but the last four characters into '#'.
+// Examples
+// maskify("4556364607935616") == "############5616"
+// maskify("64607935616") == "#######5616"
+// maskify( "1") == "1"
+// maskify("") == ""
+// "What was the name of your first pet?"
+// maskify("Skippy") == "##ippy"
+// maskify("Nananananananananananananananana Batman!") == "####################################man!"
+
+function mask(str) {
+  let masked = "";
+  if (str.length >= 4) {
+    let last4 = str.substring(str.length - 4);
+    for (let i = 0; i < str.length - 4; i++) {
+      masked += "#";
+    }
+    masked += last4;
+  } else {
+    masked += str;
+  }
+  return masked;
+}
+// console.log(mask("Nananananananananananananananana Batman!"));
