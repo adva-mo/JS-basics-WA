@@ -328,3 +328,29 @@ function shortest(str) {
   return short;
 }
 // console.log(shortest("different data types"));
+
+// Ex6.1 - Mumbling
+// The examples below show you how to write function accum​:
+// Examples:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeeezzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+// The parameter of accum is a string which includes only letters from ​a..z​ and ​A..Z​.
+
+function accum(str) {
+  res = [];
+  str = str.split("");
+  str.forEach((letter, i) => {
+    let word = "";
+    for (let j = 0; j <= i; j++) {
+      if (j == 0) {
+        word += letter.toUpperCase();
+      } else {
+        word += letter.toLowerCase();
+      }
+    }
+    res.push(word);
+  });
+  return res.join("-");
+}
+console.log(accum("RqaEzty"));
