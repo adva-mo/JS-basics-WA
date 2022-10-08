@@ -310,3 +310,21 @@ function mask(str) {
   return masked;
 }
 // console.log(mask("Nananananananananananananananana Batman!"));
+
+// Ex5.7 - shortest words
+// Simple, given a string of words, return the length of the shortest word(s).
+// String will never be empty and you do not need to account for different data types.
+
+function shortest(str) {
+  str = str.split(" ");
+  let short = 0;
+  str.forEach((word, i) => {
+    if (i == 0) {
+      short = word.length;
+    }
+    len = word.length;
+    short = short < len ? short : len;
+  });
+  return short;
+}
+// console.log(shortest("different data types"));
