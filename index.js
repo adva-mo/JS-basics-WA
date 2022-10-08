@@ -48,8 +48,8 @@ function findNextSquare(n) {
 
 function Unique(arr) {
   let firstNum = arr.shift();
-  let nextMatch = arr.find((num) => num != firstNum);
-  return nextMatch ? nextMatch : firstNum;
+  let different = arr.find((different) => different != firstNum);
+  return different ? different : firstNum;
 }
 // console.log(Unique([0, 0, 0.55, 0, 0]));
 
@@ -143,7 +143,7 @@ function nb_year(p0, percent, aug, p) {
 // Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
 // The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 
-//---------not completed
+//---------not completed!!
 
 // Ex4.1 - Fibonacci -
 // “Write a function to return an n element in Fibonacci sequence” is one of the most common questions you can hear during
@@ -182,6 +182,8 @@ function Fibonacci(n) {
 // Signature will always contain 3 numbers; n will always be a non-negative number;
 // if n == 0, then return an empty array (except in C return NULL) and be ready for anything else which is
 // not clearly specified ;)
+
+//----------------NOT COMPLETED!!
 
 function Tribonacci(n, arr) {
   if (n == 1 || n == 2) {
@@ -353,4 +355,17 @@ function accum(str) {
   });
   return res.join("-");
 }
-console.log(accum("RqaEzty"));
+// console.log(accum("RqaEzty"));
+
+// Ex6.2 - Counting Duplicates
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric
+// digits that occur more than once in the input string. The input string can be assumed to contain only
+// alphabets (both uppercase and lowercase) and numeric digits.
+// Example
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
