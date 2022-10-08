@@ -262,5 +262,22 @@ function toWeirdCase(str) {
     })
     .join(" ");
 }
+// console.log(toWeirdCase("Weird string case"));
 
-console.log(toWeirdCase("Weird string case"));
+// Ex5.5 - Abbreviate two words
+// Write a function to convert a name into initials. This kata strictly takes two words with one space in
+// between them.
+// The output should be two capital letters with a dot separating them.
+// It should look like this:
+// Sam Harris => S.H
+// Patrick Feeney => P.F6.6
+
+function initial(name) {
+  name = name.split(" ");
+  let res = [];
+  name.forEach((word, i) => {
+    res.push(word[i].toUpperCase());
+  });
+  return res.join(".");
+}
+console.log(initial("Sam Harris"));
