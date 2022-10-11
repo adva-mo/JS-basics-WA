@@ -345,11 +345,7 @@ function accum(str) {
   str.forEach((letter, i) => {
     let word = "";
     for (let j = 0; j <= i; j++) {
-      if (j == 0) {
-        word += letter.toUpperCase();
-      } else {
-        word += letter.toLowerCase();
-      }
+      j == 0 ? (word += letter.toUpperCase()) : (word += letter.toLowerCase());
     }
     res.push(word);
   });
@@ -358,6 +354,7 @@ function accum(str) {
 // console.log(accum("RqaEzty"));
 
 // Ex6.2 - Counting Duplicates
+
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric
 // digits that occur more than once in the input string. The input string can be assumed to contain only
 // alphabets (both uppercase and lowercase) and numeric digits.
@@ -369,3 +366,61 @@ function accum(str) {
 // "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+function namDuplicatese(str) {
+  let repeted = [];
+  str = str.toLowerCase().split("");
+  for (letter of str) {
+    let tested = str.shift();
+    str.includes(tested) && !repeted.includes(tested) && repeted.push(tested);
+  }
+  return repeted.length;
+}
+console.log(namDuplicatese("abcde"));
+
+// Ex6.3 - organize strings
+
+// Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest
+// possible, containing distinct letters,
+// each taken only once - coming from s1 or s2.
+// Examples:
+// a = "xyaabbbccccdefww"
+// b = "xxxxyyyyabklmopq"
+// longest(a, b) -> "abcdefklmopqwxy"
+// a = "abcdefghijklmnopqrstuvwxyz"
+// longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+function organizeStrings(a, b) {
+  let res = [];
+  let test = (a + b).split("");
+  for (letter of test) {
+    !res.includes(letter) && res.push(letter);
+  }
+  return res.join("");
+}
+let a = "abcdefghijklmnopqrstuvwxyz";
+let b = "abcdefghijklmnopqrstuvwxyz";
+// console.log(organizeStrings(a, b));
+
+// Ex6.4 - isogram
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+// isIsogram("Dermatoglyphics") == true
+// isIsogram("aba") == false
+// isIsogram("moOse") == false
+// -- ignore letter case
+
+function isogram(str) {
+  let isogram = true;
+  str = str.toLowerCase().split("");
+  for (letter of str) {
+    let first = str.shift();
+    for (letter of str) {
+      if (letter == first) {
+        isogram = false;
+        break;
+      }
+    }
+  }
+  return isogram;
+}
+// console.log(isogram("moOse"));
